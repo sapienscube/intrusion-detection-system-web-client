@@ -29,7 +29,7 @@ function OutlinedTextFields(props) {
   };
 
   return (
-    <div>
+    <MuiThemeProvider theme={theme}>
       <TextField
         id="outlined-number"
         label={title}
@@ -43,7 +43,7 @@ function OutlinedTextFields(props) {
         margin="normal"
         variant="outlined"
       />
-    </div>
+    </MuiThemeProvider>
   );
 }
 
