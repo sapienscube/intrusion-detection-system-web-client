@@ -84,7 +84,7 @@ const features = {
         "sql_net",
         "ldap"
       ],
-      placeholder: "finger"
+      placeholder: "discard"
     },
     {
       title: "SF",
@@ -265,10 +265,9 @@ const features = {
 };
 
 function Feature(props) {
-  const zero = props.features[0];
-  const default_cats = props.features.slice(1, 4);
-  const default_nums = props.features.slice(4);
-  console.log(default_cats);
+  function handleCatChange(cat) {
+    console.log(cat);
+  }
   return (
     <Grid container justify="center">
       <OutlinedTextFields
@@ -280,6 +279,7 @@ function Feature(props) {
           title={feature.title}
           values={feature.values}
           placeholder={feature.placeholder}
+          onCatChange={handleCatChange}
         />
       ))}
       {features.numerical.titles.slice(1).map(title => (

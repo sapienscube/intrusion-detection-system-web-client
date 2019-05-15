@@ -28,9 +28,9 @@ const styles = {
 };
 
 function SimpleSelect(props) {
-  const { classes, title, values, defaults } = props;
+  const { classes, title, values, placeholder, onCatChange } = props;
   const [state, setState] = React.useState({
-    age: "",
+    placeholder: placeholder,
     name: "hai",
     labelWidth: 0
   });
@@ -48,6 +48,7 @@ function SimpleSelect(props) {
       ...state,
       [event.target.name]: event.target.value
     });
+    onCatChange(event.target);
   }
 
   return (
@@ -58,12 +59,12 @@ function SimpleSelect(props) {
             {title}
           </InputLabel>
           <Select
-            value={state.age}
+            value={state.placeholder}
             onChange={handleChange}
             input={
               <OutlinedInput
                 labelWidth={state.labelWidth}
-                name="age"
+                name="placeholder"
                 id="outlined-age-simple"
               />
             }
@@ -71,8 +72,8 @@ function SimpleSelect(props) {
             <MenuItem value="">
               <em>None</em>
             </MenuItem>
-            {values.map(value => (
-              <MenuItem value={20}>{value}</MenuItem>
+            {values.map((val, ind) => (
+              <MenuItem value={val}>{val}</MenuItem>
             ))}
           </Select>
         </FormControl>
