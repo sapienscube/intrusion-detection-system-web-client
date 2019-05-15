@@ -6,22 +6,35 @@ import CSVRecord from "./CSVRecord";
 
 class App extends React.Component {
   state = {
-    features: []
+    features: [
+      {
+        title: "",
+        value: ""
+      }
+    ]
   };
 
   handleCSVChange = features => {
-    this.setState({ features: features });
+    console.log(features);
   };
 
-  handleFeatureChange(feature) {}
+  handleFeatureChange = feature => {
+    console.log(feature);
+  };
 
   render() {
     return (
       <div className="App">
         <Grid container justify="center" spacing={36}>
-          <CSVRecord handleCSVChange={this.handleCSVChange} />
+          <CSVRecord
+            features={this.state.features}
+            onCSVChange={this.handleCSVChange}
+          />
           Or
-          <Feature features={this.state.features} />
+          <Feature
+            features={this.state.features}
+            onFeatureChange={this.handleFeatureChange}
+          />
           <div style={{ padding: "70px" }}>
             <Attack value={1} />
           </div>

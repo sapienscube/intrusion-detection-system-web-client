@@ -266,13 +266,17 @@ const features = {
 
 function Feature(props) {
   function handleCatChange(cat) {
-    console.log(cat);
+    props.onFeatureChange(cat);
+  }
+  function handleNumChange(num) {
+    props.onFeatureChange(num);
   }
   return (
     <Grid container justify="center">
       <OutlinedTextFields
         title={features.numerical.titles[0].string}
         placeholder={features.numerical.titles[0].placeholder}
+        onNumChange={handleNumChange}
       />
       {features.categorical.map(feature => (
         <SimpleSelect
@@ -286,6 +290,7 @@ function Feature(props) {
         <OutlinedTextFields
           title={title.string}
           placeholder={title.placeholder}
+          onNumChange={handleNumChange}
         />
       ))}
     </Grid>

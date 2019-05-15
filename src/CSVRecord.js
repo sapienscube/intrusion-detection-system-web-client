@@ -14,7 +14,7 @@ class CSVRecord extends React.Component {
   state = {};
   handleChange = event => {
     const features = event.target.value.split(",");
-    this.props.handleCSVChange(features);
+    this.props.onCSVChange(features);
   };
   render() {
     const classes = this.props.classes;

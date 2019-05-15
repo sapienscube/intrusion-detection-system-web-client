@@ -20,12 +20,13 @@ function OutlinedTextFields(props) {
   const { classes, title } = props;
   const [values, setValues] = React.useState({
     name: "Cat in the Hat",
-    age: "",
+    title: "",
     multiline: "Controlled",
     currency: "EUR"
   });
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
+    props.onNumChange({ value: event.target.value, name: name });
   };
 
   return (
@@ -33,9 +34,9 @@ function OutlinedTextFields(props) {
       <TextField
         id="outlined-number"
         label={title}
-        value={values.age}
-        onChange={handleChange("age")}
-        type="number"
+        value={values.title}
+        onChange={handleChange("title")}
+        type="string"
         className={classes.textField}
         InputLabelProps={{
           shrink: true

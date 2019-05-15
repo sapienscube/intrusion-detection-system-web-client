@@ -64,7 +64,7 @@ function SimpleSelect(props) {
             input={
               <OutlinedInput
                 labelWidth={state.labelWidth}
-                name="placeholder"
+                name="title"
                 id="outlined-age-simple"
               />
             }
