@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kddcup-intrusion-detection-system/static/css/main.34de6062.chunk.css",
+    "main.js": "/kddcup-intrusion-detection-system/static/js/main.908a8c2e.chunk.js",
+    "main.js.map": "/kddcup-intrusion-detection-system/static/js/main.908a8c2e.chunk.js.map",
+    "runtime~main.js": "/kddcup-intrusion-detection-system/static/js/runtime~main.3e67939e.js",
+    "runtime~main.js.map": "/kddcup-intrusion-detection-system/static/js/runtime~main.3e67939e.js.map",
+    "static/js/2.5421395b.chunk.js": "/kddcup-intrusion-detection-system/static/js/2.5421395b.chunk.js",
+    "static/js/2.5421395b.chunk.js.map": "/kddcup-intrusion-detection-system/static/js/2.5421395b.chunk.js.map",
+    "index.html": "/kddcup-intrusion-detection-system/index.html",
+    "precache-manifest.6e3ce6b3fa11aec08e38aaf5f839149e.js": "/kddcup-intrusion-detection-system/precache-manifest.6e3ce6b3fa11aec08e38aaf5f839149e.js",
+    "service-worker.js": "/kddcup-intrusion-detection-system/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "/kddcup-intrusion-detection-system/static/css/main.34de6062.chunk.css.map"
+  }
+}
