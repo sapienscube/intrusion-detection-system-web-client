@@ -7,8 +7,9 @@ import CSVRecord from "./CSVRecord";
 function App() {
   return (
     <div className="App">
-      <Grid container direction="column" alignItems="center" spacing={36}>
+      <Grid container justify="center" spacing={36}>
         <CSVRecord />
+        Or
         <Feature />
         <div style={{ padding: "70px" }}>
           <Attack value={1} />
