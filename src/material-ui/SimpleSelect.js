@@ -30,7 +30,7 @@ const styles = {
 function SimpleSelect(props) {
   const { classes, title, values, placeholder, onCatChange } = props;
   const [state, setState] = React.useState({
-    placeholder: placeholder,
+    title: title,
     name: "hai",
     labelWidth: 0
   });
@@ -59,7 +59,7 @@ function SimpleSelect(props) {
             {title}
           </InputLabel>
           <Select
-            value={state.placeholder}
+            value={state.title}
             onChange={handleChange}
             input={
               <OutlinedInput
