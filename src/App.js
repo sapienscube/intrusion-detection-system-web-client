@@ -269,7 +269,18 @@ class App extends React.Component {
   };
 
   handleCSVChange = features => {
+    const cats = features.slice(1, 4);
+    const nums = features.slice(0, 1).concat(features.slice(4));
     console.log(features);
+    console.log("cats", cats);
+    console.log("nums", nums);
+    for (var i = 0; i < cats.length; i++) {
+      this.state.features.categorical[i].placeholder = cats[i];
+      console.log(
+        "this.state.features.categorical.placeholder: ",
+        this.state.features.categorical[i].placeholder
+      );
+    }
   };
 
   handleFeatureChange = feature => {
