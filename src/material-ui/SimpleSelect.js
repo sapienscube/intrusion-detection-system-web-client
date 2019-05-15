@@ -28,7 +28,7 @@ const styles = {
 };
 
 function SimpleSelect(props) {
-  const { classes, title, values } = props;
+  const { classes, title, values, defaults } = props;
   const [state, setState] = React.useState({
     age: "",
     name: "hai",

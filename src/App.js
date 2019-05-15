@@ -4,19 +4,31 @@ import Feature from "./Feature";
 import Attack from "./Attack";
 import CSVRecord from "./CSVRecord";
 
-function App() {
-  return (
-    <div className="App">
-      <Grid container justify="center" spacing={36}>
-        <CSVRecord />
-        Or
-        <Feature />
-        <div style={{ padding: "70px" }}>
-          <Attack value={1} />
-        </div>
-      </Grid>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    features: []
+  };
+
+  handleCSVChange = features => {
+    this.setState({ features: features });
+  };
+
+  handleFeatureChange(feature) {}
+
+  render() {
+    return (
+      <div className="App">
+        <Grid container justify="center" spacing={36}>
+          <CSVRecord handleCSVChange={this.handleCSVChange} />
+          Or
+          <Feature features={this.state.features} />
+          <div style={{ padding: "70px" }}>
+            <Attack value={1} />
+          </div>
+        </Grid>
+      </div>
+    );
+  }
 }
 
 export default App;

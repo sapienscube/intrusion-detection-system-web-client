@@ -6,6 +6,11 @@ import OutlinedTextFields from "./material-ui/OutlinedTextFields";
 const features = {
   categorical: [
     {
+      title: "tcp",
+      values: ["tcp", "udp", "icmp"],
+      placeholder: "tcp"
+    },
+    {
       title: "http",
       values: [
         "finger",
@@ -78,11 +83,8 @@ const features = {
         "http_8001",
         "sql_net",
         "ldap"
-      ]
-    },
-    {
-      title: "tcp",
-      values: ["tcp", "udp", "icmp"]
+      ],
+      placeholder: "finger"
     },
     {
       title: "SF",
@@ -98,61 +100,193 @@ const features = {
         "SH",
         "REJ",
         "SF"
-      ]
+      ],
+      placeholder: "S3"
     }
   ],
   numerical: {
     titles: [
-      "255",
-      "45076",
-      "0.1",
-      "0.2",
-      "0.3",
-      "0.4",
-      "0.5",
-      "1",
-      "0.6",
-      "0.7",
-      "0.8",
-      "0.9",
-      "0.10",
-      "0.11",
-      "0.12",
-      "0.13",
-      "0.14",
-      "0.15",
-      "1.1",
-      "1.2",
-      "0.00",
-      "0.00.1",
-      "0.00.2",
-      "0.00.3",
-      "1.00",
-      "0.00.4",
-      "0.00.5",
-      "0.16",
-      "0.17",
-      "0.00.6",
-      "0.00.7",
-      "0.00.8",
-      "0.00.9",
-      "0.00.10",
-      "0.00.11",
-      "0.00.12",
-      "0.00.13"
+      {
+        string: "0",
+        placeholder: "0"
+      },
+      {
+        string: "255",
+        placeholder: "0"
+      },
+      {
+        string: "45076",
+        placeholder: "0"
+      },
+      {
+        string: "0.1",
+        placeholder: "0"
+      },
+      {
+        string: "0.2",
+        placeholder: "0"
+      },
+      {
+        string: "0.3",
+        placeholder: "0"
+      },
+      {
+        string: "0.4",
+        placeholder: "0"
+      },
+      {
+        string: "0.5",
+        placeholder: "0"
+      },
+      {
+        string: "1",
+        placeholder: "0"
+      },
+      {
+        string: "0.6",
+        placeholder: "0"
+      },
+      {
+        string: "0.7",
+        placeholder: "0"
+      },
+      {
+        string: "0.8",
+        placeholder: "0"
+      },
+      {
+        string: "0.9",
+        placeholder: "0"
+      },
+      {
+        string: "0.10",
+        placeholder: "0"
+      },
+      {
+        string: "0.11",
+        placeholder: "0"
+      },
+
+      {
+        string: "0.12",
+        placeholder: "0"
+      },
+      {
+        string: "0.13",
+        placeholder: "0"
+      },
+      {
+        string: "0.14",
+        placeholder: "0"
+      },
+      {
+        string: "0.15",
+        placeholder: "0"
+      },
+      {
+        string: "1.1",
+        placeholder: "0"
+      },
+      {
+        string: "1.2",
+        placeholder: "0"
+      },
+      {
+        string: "0.00",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.1",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.2",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.3",
+        placeholder: "0"
+      },
+      {
+        string: "1.00",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.4",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.5",
+        placeholder: "0"
+      },
+      {
+        string: "0.16",
+        placeholder: "0"
+      },
+      {
+        string: "0.17",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.6",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.7",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.8",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.9",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.10",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.11",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.12",
+        placeholder: "0"
+      },
+      {
+        string: "0.00.13",
+        placeholder: "0"
+      }
     ],
     values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "..."]
   }
 };
 
-function Feature() {
+function Feature(props) {
+  const zero = props.features[0];
+  const default_cats = props.features.slice(1, 4);
+  const default_nums = props.features.slice(4);
+  console.log(default_cats);
   return (
     <Grid container justify="center">
+      <OutlinedTextFields
+        title={features.numerical.titles[0].string}
+        placeholder={features.numerical.titles[0].placeholder}
+      />
       {features.categorical.map(feature => (
-        <SimpleSelect title={feature.title} values={feature.values} />
+        <SimpleSelect
+          title={feature.title}
+          values={feature.values}
+          placeholder={feature.placeholder}
+        />
       ))}
-      {features.numerical.titles.map(title => (
-        <OutlinedTextFields title={title} />
+      {features.numerical.titles.slice(1).map(title => (
+        <OutlinedTextFields
+          title={title.string}
+          placeholder={title.placeholder}
+        />
       ))}
     </Grid>
   );
