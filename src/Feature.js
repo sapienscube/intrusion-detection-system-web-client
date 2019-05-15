@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import SimpleSelect from "./material-ui/SimpleSelect";
+import OutlinedTextFields from "./material-ui/OutlinedTextFields";
 
 const features = {
   categorical: [
@@ -151,10 +152,12 @@ function Feature() {
         <SimpleSelect title={feature.title} values={feature.values} />
       ))}
       {features.numerical.titles.map(title => (
-        <SimpleSelect title={title} values={features.numerical.values} />
+        <OutlinedTextFields title={title} />
       ))}
     </Grid>
   );
 }
+
+// title={title} values={features.numerical.values}
 
 export default Feature;
