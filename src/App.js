@@ -269,11 +269,14 @@ class App extends React.Component {
   };
 
   handleCSVChange = features => {
+    // Get the categories and numerics from features
     const cats = features.slice(1, 4);
     const nums = features.slice(0, 1).concat(features.slice(4));
     console.log(features);
     console.log("cats", cats);
     console.log("nums", nums);
+    // Set state.categorical[i].placeholder = cats[i]
+    // Set state.numerical.titles[i].placeholder = nums[i]
     for (var i = 0; i < cats.length; i++) {
       this.state.features.categorical[i].placeholder = cats[i];
       console.log(

@@ -17,10 +17,10 @@ const styles = {
 };
 
 function OutlinedTextFields(props) {
-  const { classes, title } = props;
+  const { classes, title, placeholder } = props;
   const [values, setValues] = React.useState({
-    name: "Cat in the Hat",
-    title: "",
+    name: "nums",
+    title: placeholder,
     multiline: "Controlled",
     currency: "EUR"
   });
