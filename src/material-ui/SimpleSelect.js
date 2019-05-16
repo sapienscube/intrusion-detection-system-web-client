@@ -48,7 +48,7 @@ function SimpleSelect(props) {
       ...state,
       [event.target.name]: event.target.value
     });
-    onCatChange(event.target);
+    onCatChange({ name: title, value: event.target.value });
   }
 
   return (

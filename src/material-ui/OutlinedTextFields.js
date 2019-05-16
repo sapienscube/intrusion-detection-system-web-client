@@ -26,7 +26,7 @@ function OutlinedTextFields(props) {
   });
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
-    props.onNumChange({ value: event.target.value, name: name });
+    props.onNumChange({ name: title, value: event.target.value });
   };
 
   return (
