@@ -272,30 +272,36 @@ class App extends React.Component {
     // Get the categories and numerics from features
     const cats = features.slice(1, 4);
     const nums = features.slice(0, 1).concat(features.slice(4));
-    // Set state.categorical[i].placeholder = cats[i]
-    // Set state.numerical.titles[i].placeholder = nums[i]
-    var this_cats = [...this.state.features.categorical];
-    var this_nums = [...this.state.features.numerical.titles];
-    // console.log("nums[0]:", nums[0]);
-    // this_nums[0].placeholder = nums[0];
-    // console.log(this_nums[0]);
-    // console.log(typeof this_nums);
+
+    let this_cats = [...this.state.features.categorical];
+    let this_nums = [...this.state.features.numerical.titles];
+
+    // Set states
     this_nums.map((title, i) => {
       title.placeholder = nums[i];
     });
     this_cats.map((cat, i) => {
-      cat.title = cats[i].name;
-      cat.placeholder = cats[i].value;
+      cat.placeholder = cats[i];
     });
-    // console.log("this_cats", this_cats);
-    console.log("this_nums", this_nums);
-    console.log("state_nums", this.state.features.numerical.titles);
     this.setState(this_cats);
     this.setState(this_nums);
   };
 
   handleFeatureChange = feature => {
-    console.log(feature);
+    let this_nums = [...this.state.features.numerical.titles];
+    let this_cats = [...this.state.features.categorical];
+    this_nums.map(title => {
+      if (title.string === feature.name) {
+        title.placeholder = feature.value;
+      }
+    });
+    this_cats.map(cat => {
+      if (cat.title === feature.name) {
+        cat.placeholder = feature.value;
+      }
+    });
+    this.setState(this_nums);
+    this.setState(this_cats);
   };
 
   render() {

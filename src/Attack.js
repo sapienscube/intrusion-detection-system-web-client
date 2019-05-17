@@ -4,6 +4,7 @@ import { Typography } from "@material-ui/core";
 
 function Attack(props) {
   const { features } = props;
+  console.log("in Attack:", features);
   var prediction = 1;
   return (
     <div>
