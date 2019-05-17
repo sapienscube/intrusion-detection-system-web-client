@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kddcup-intrusion-detection-system/precache-manifest.e8ddb58e23738c6969cf075331e01ee8.js"
+  "/kddcup-intrusion-detection-system/precache-manifest.3da5ba9f5c8d617cb0f57e59c91a091b.js"
 );
 
 self.addEventListener('message', (event) => {
