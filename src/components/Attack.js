@@ -18,10 +18,11 @@ function Attack(props) {
   const features = getArray(props.features);
   console.log(features);
   const prediction = predict(features);
+  console.log("prediction: ", prediction);
   return (
     <div>
       <Typography variant="h3">
-        {prediction == 1 ? "Malicious" : "Normal"}
+        {prediction == "1" ? "Malicious" : "Normal"}
       </Typography>
     </div>
   );
