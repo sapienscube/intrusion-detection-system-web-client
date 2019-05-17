@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "13423aa1aebdce3fd576a0b7e0655cf7",
+    "revision": "3892a0358e1b6b420cbe586bcf739096",
     "url": "/kddcup-intrusion-detection-system/index.html"
   },
   {
-    "revision": "2eddfaeba4189f8857b9",
+    "revision": "2caecb6e7a883fc58baf",
     "url": "/kddcup-intrusion-detection-system/static/css/main.34de6062.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kddcup-intrusion-detection-system/static/js/2.0ecb12c4.chunk.js"
   },
   {
-    "revision": "2eddfaeba4189f8857b9",
-    "url": "/kddcup-intrusion-detection-system/static/js/main.f889dfe2.chunk.js"
+    "revision": "2caecb6e7a883fc58baf",
+    "url": "/kddcup-intrusion-detection-system/static/js/main.26d37916.chunk.js"
   },
   {
     "revision": "c362c886718f59ab4e15",
