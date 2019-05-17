@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid, Button } from "@material-ui/core";
-import Feature from "./Feature";
-import Attack from "./Attack";
-import CSVRecord from "./CSVRecord";
+import Feature from "./components/Feature";
+import Attack from "./components/Attack";
+import CSVRecord from "./components/CSVRecord";
 
 class App extends React.Component {
   state = {
