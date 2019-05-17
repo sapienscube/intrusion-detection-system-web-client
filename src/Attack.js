@@ -2,6 +2,8 @@ import React from "react";
 
 import { Typography } from "@material-ui/core";
 
+import predict from "./model";
+
 function Attack(props) {
   let nums = [];
   let cats = [];
@@ -11,12 +13,11 @@ function Attack(props) {
   props.features.categorical.map(cat => (cats = cats.concat(cat.placeholder)));
   const features = [nums[0]].concat(cats).concat(nums.slice(1));
   console.log(features);
-  var prediction = 1;
+
+  predict(features).then(prediction => console.log(prediction));
   return (
     <div>
-      <Typography variant="h3">
-        {prediction ? "Malicious" : "Normal"}
-      </Typography>
+      <Typography variant="h3">{1 ? "Malicious" : "Normal"}</Typography>
     </div>
   );
 }
