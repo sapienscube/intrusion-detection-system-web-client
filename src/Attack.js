@@ -14,7 +14,7 @@ function Attack(props) {
   const features = [nums[0]].concat(cats).concat(nums.slice(1));
   console.log(features);
 
-  predict(features).then(prediction => console.log(prediction));
+  predict(features).then(prediction => console.log("prediction: ", prediction));
   return (
     <div>
       <Typography variant="h3">{1 ? "Malicious" : "Normal"}</Typography>
