@@ -2,7 +2,7 @@ import React from "react";
 
 import { Typography } from "@material-ui/core";
 
-import predict from "./model";
+import predict from "../models/model";
 
 function getArray(features) {
   let nums = [];
