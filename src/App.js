@@ -272,18 +272,26 @@ class App extends React.Component {
     // Get the categories and numerics from features
     const cats = features.slice(1, 4);
     const nums = features.slice(0, 1).concat(features.slice(4));
-    console.log(features);
-    console.log("cats", cats);
-    console.log("nums", nums);
     // Set state.categorical[i].placeholder = cats[i]
     // Set state.numerical.titles[i].placeholder = nums[i]
-    for (var i = 0; i < cats.length; i++) {
-      this.state.features.categorical[i].placeholder = cats[i];
-      console.log(
-        "this.state.features.categorical.placeholder: ",
-        this.state.features.categorical[i].placeholder
-      );
-    }
+    var this_cats = [...this.state.features.categorical];
+    var this_nums = [...this.state.features.numerical.titles];
+    // console.log("nums[0]:", nums[0]);
+    // this_nums[0].placeholder = nums[0];
+    // console.log(this_nums[0]);
+    // console.log(typeof this_nums);
+    this_nums.map((title, i) => {
+      title.placeholder = nums[i];
+    });
+    this_cats.map((cat, i) => {
+      cat.title = cats[i].name;
+      cat.placeholder = cats[i].value;
+    });
+    // console.log("this_cats", this_cats);
+    console.log("this_nums", this_nums);
+    console.log("state_nums", this.state.features.numerical.titles);
+    this.setState(this_cats);
+    this.setState(this_nums);
   };
 
   handleFeatureChange = feature => {
@@ -291,20 +299,18 @@ class App extends React.Component {
   };
 
   render() {
+    const { features } = this.state;
     return (
       <div className="App">
         <Grid container justify="center" spacing={36}>
-          <CSVRecord
-            features={this.state.features}
-            onCSVChange={this.handleCSVChange}
-          />
+          <CSVRecord features={features} onCSVChange={this.handleCSVChange} />
           Or
           <Feature
-            features={this.state.features}
+            features={features}
             onFeatureChange={this.handleFeatureChange}
           />
           <div style={{ padding: "70px" }}>
-            <Attack value={1} />
+            <Attack features={features} />
           </div>
         </Grid>
       </div>
