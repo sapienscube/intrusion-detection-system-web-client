@@ -9,7 +9,8 @@ function predict(features) {
 
   const model_relative_link = "./model.json";
 
-  // const promise = tf.loadLayersModel(model_relative_link);
+  const promise = tf.loadLayersModel(model_relative_link);
+  console.log(promise);
   // promise.then(data => console.log("model: ", data));
   // console.log("features[0]: ", features[0]);
   return features[0];
