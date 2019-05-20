@@ -12,7 +12,7 @@ const styles = {
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: "100px"
+    width: "150px"
   }
 };
 
@@ -32,11 +32,11 @@ function OutlinedTextFields(props) {
   return (
     <MuiThemeProvider theme={theme}>
       <TextField
-        id="outlined-number"
+        id={title}
         label={title}
         value={values.title}
         onChange={handleChange("title")}
-        type="string"
+        type="number"
         className={classes.textField}
         InputLabelProps={{
           shrink: true

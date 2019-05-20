@@ -4,18 +4,21 @@ import Feature from "./components/Feature";
 import Attack from "./components/Attack";
 import CSVRecord from "./components/CSVRecord";
 
+// 'attack_type'
+
 class App extends React.Component {
   state = {
     features: {
       categorical: [
         {
-          title: "tcp",
+          title: "protocol_type",
           values: ["tcp", "udp", "icmp"],
           placeholder: "tcp"
         },
         {
-          title: "http",
+          title: "service",
           values: [
+            "http",
             "finger",
             "discard",
             "systat",
@@ -90,8 +93,9 @@ class App extends React.Component {
           placeholder: "discard"
         },
         {
-          title: "SF",
+          title: "flag",
           values: [
+            "SF",
             "S3",
             "RSTR",
             "RSTOS0",
@@ -110,157 +114,157 @@ class App extends React.Component {
       numerical: {
         titles: [
           {
-            string: "0",
+            string: "duration",
             placeholder: "0"
           },
           {
-            string: "255",
+            string: "src_bytes",
+            placeholder: "255"
+          },
+          {
+            string: "dst_bytes",
+            placeholder: "255"
+          },
+          {
+            string: "land",
             placeholder: "0"
           },
           {
-            string: "45076",
-            placeholder: "0"
+            string: "wrong_fragment",
+            placeholder: "0.2"
           },
           {
-            string: "0.1",
-            placeholder: "0"
+            string: "urgent",
+            placeholder: "0.3"
           },
           {
-            string: "0.2",
-            placeholder: "0"
+            string: "hot",
+            placeholder: "0.4"
           },
           {
-            string: "0.3",
-            placeholder: "0"
+            string: "num_failed_logins",
+            placeholder: "0.5"
           },
           {
-            string: "0.4",
-            placeholder: "0"
+            string: "logged_in",
+            placeholder: "1"
           },
           {
-            string: "0.5",
-            placeholder: "0"
+            string: "num_compromised",
+            placeholder: "0.6"
           },
           {
-            string: "1",
-            placeholder: "0"
+            string: "root_shell",
+            placeholder: "0.7"
           },
           {
-            string: "0.6",
-            placeholder: "0"
+            string: "su_attempted",
+            placeholder: "0.8"
           },
           {
-            string: "0.7",
-            placeholder: "0"
+            string: "num_root",
+            placeholder: "0.9"
           },
           {
-            string: "0.8",
-            placeholder: "0"
+            string: "num_file_creations",
+            placeholder: "0.10"
           },
           {
-            string: "0.9",
-            placeholder: "0"
-          },
-          {
-            string: "0.10",
-            placeholder: "0"
-          },
-          {
-            string: "0.11",
-            placeholder: "0"
+            string: "num_shells",
+            placeholder: "0.11"
           },
 
           {
-            string: "0.12",
-            placeholder: "0"
+            string: "num_access_files",
+            placeholder: "0.12"
           },
           {
-            string: "0.13",
-            placeholder: "0"
+            string: "num_outbound_cmds",
+            placeholder: "0.13"
           },
           {
-            string: "0.14",
-            placeholder: "0"
+            string: "is_host_login",
+            placeholder: "0.14"
           },
           {
-            string: "0.15",
-            placeholder: "0"
+            string: "is_guest_login",
+            placeholder: "0.15"
           },
           {
-            string: "1.1",
-            placeholder: "0"
+            string: "count",
+            placeholder: "1.1"
           },
           {
-            string: "1.2",
-            placeholder: "0"
+            string: "srv_count",
+            placeholder: "1.2"
           },
           {
-            string: "0.00",
-            placeholder: "0"
+            string: "serror_rate",
+            placeholder: "0.00"
           },
           {
-            string: "0.00.1",
-            placeholder: "0"
+            string: "srv_serror_rate",
+            placeholder: "0.00.1"
           },
           {
-            string: "0.00.2",
-            placeholder: "0"
+            string: "rerror_rate",
+            placeholder: "0.00.2"
           },
           {
-            string: "0.00.3",
-            placeholder: "0"
+            string: "srv_rerror_rate",
+            placeholder: "0.00.3"
           },
           {
-            string: "1.00",
-            placeholder: "0"
+            string: "same_srv_rate",
+            placeholder: "1.00"
           },
           {
-            string: "0.00.4",
-            placeholder: "0"
+            string: "diff_srv_rate",
+            placeholder: "0.00.4"
           },
           {
-            string: "0.00.5",
-            placeholder: "0"
+            string: "srv_diff_host_rate",
+            placeholder: "0.00.5"
           },
           {
-            string: "0.16",
-            placeholder: "0"
+            string: "dst_host_count",
+            placeholder: "0.16"
           },
           {
-            string: "0.17",
-            placeholder: "0"
+            string: "dst_host_srv_count",
+            placeholder: "0.17"
           },
           {
-            string: "0.00.6",
-            placeholder: "0"
+            string: "dst_host_same_srv_rate",
+            placeholder: "0.00.6"
           },
           {
-            string: "0.00.7",
-            placeholder: "0"
+            string: "dst_host_diff_srv_rate",
+            placeholder: "0.00.7"
           },
           {
-            string: "0.00.8",
-            placeholder: "0"
+            string: "dst_host_same_src_port_rate",
+            placeholder: "0.00.8"
           },
           {
-            string: "0.00.9",
-            placeholder: "0"
+            string: "dst_host_srv_diff_host_rate",
+            placeholder: "0.00.9"
           },
           {
-            string: "0.00.10",
-            placeholder: "0"
+            string: "dst_host_serror_rate",
+            placeholder: "0.00.10"
           },
           {
-            string: "0.00.11",
-            placeholder: "0"
+            string: "dst_host_srv_serror_rate",
+            placeholder: "0.00.11"
           },
           {
-            string: "0.00.12",
-            placeholder: "0"
+            string: "dst_host_rerror_rate",
+            placeholder: "0.00.12"
           },
           {
-            string: "0.00.13",
-            placeholder: "0"
+            string: "dst_host_srv_rerror_rate",
+            placeholder: "0.00.13"
           }
         ],
         values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "..."]
@@ -315,7 +319,7 @@ class App extends React.Component {
             features={features}
             onFeatureChange={this.handleFeatureChange}
           />
-          <div style={{ padding: "70px" }}>
+          <div style={{ padding: "30px" }}>
             <Attack features={features} />
           </div>
         </Grid>
