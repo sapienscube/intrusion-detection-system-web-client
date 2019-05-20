@@ -10,7 +10,7 @@ const styles = {
 const placeholder =
   "0, tcp, http, SF, 184, 124, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0.00, 0.00, 0.00, 0.00, 1.00, 0.00, 0.00, 10, 10, 1.00, 0.00, 0.10, 0.00, 0.00, 0.00, 0.00, 0.00";
 
-class CSVRecord extends React.Component {
+class Packet extends React.Component {
   state = {};
   handleChange = event => {
     const features = event.target.value.split(",");
@@ -23,7 +23,7 @@ class CSVRecord extends React.Component {
         <Grid item sm={11}>
           <TextField
             id="outlined-with-placeholder"
-            label="CSV Record"
+            label="Network Trafic Packet"
             placeholder={placeholder}
             className={classes.textField}
             margin="normal"
@@ -36,4 +36,4 @@ class CSVRecord extends React.Component {
   }
 }
 
-export default withStyles(styles)(CSVRecord);
+export default withStyles(styles)(Packet);

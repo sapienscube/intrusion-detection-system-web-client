@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Button } from "@material-ui/core";
 import Feature from "./components/Feature";
 import Attack from "./components/Attack";
-import CSVRecord from "./components/CSVRecord";
+import Packet from "./components/Packet";
 
 // 'attack_type'
 
@@ -90,7 +90,7 @@ class App extends React.Component {
             "sql_net",
             "ldap"
           ],
-          placeholder: "discard"
+          placeholder: "http"
         },
         {
           title: "flag",
@@ -108,7 +108,7 @@ class App extends React.Component {
             "REJ",
             "SF"
           ],
-          placeholder: "S3"
+          placeholder: "SF"
         }
       ],
       numerical: {
@@ -313,7 +313,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Grid container justify="center" spacing={36}>
-          <CSVRecord features={features} onCSVChange={this.handleCSVChange} />
+          <Packet features={features} onCSVChange={this.handleCSVChange} />
           Or
           <Feature
             features={features}
