@@ -22,7 +22,7 @@ function Attack(props) {
   return (
     <div>
       <Typography variant="h3">
-        {prediction == "1" ? "Malicious" : "Normal"}
+        {prediction === "1" ? "Malicious" : "Normal"}
       </Typography>
     </div>
   );

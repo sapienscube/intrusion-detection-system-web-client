@@ -30,7 +30,7 @@ const styles = {
 function SimpleSelect(props) {
   const { classes, title, values, placeholder, onCatChange } = props;
   const [state, setState] = React.useState({
-    title: title,
+    title: placeholder,
     name: "hai",
     labelWidth: 0
   });
@@ -41,7 +41,7 @@ function SimpleSelect(props) {
       ...state,
       labelWidth: ReactDOM.findDOMNode(inputLabelRef.current).offsetWidth
     });
-  }, []);
+  }, [state]);
 
   function handleChange(event) {
     setState({

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Button } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import Feature from "./components/Feature";
 import Attack from "./components/Attack";
 import Packet from "./components/Packet";
@@ -283,9 +283,11 @@ class App extends React.Component {
     // Set states
     this_nums.map((title, i) => {
       title.placeholder = nums[i];
+      return title;
     });
     this_cats.map((cat, i) => {
       cat.placeholder = cats[i];
+      return cat;
     });
     this.setState(this_cats);
     this.setState(this_nums);
@@ -298,11 +300,13 @@ class App extends React.Component {
       if (title.string === feature.name) {
         title.placeholder = feature.value;
       }
+      return title;
     });
     this_cats.map(cat => {
       if (cat.title === feature.name) {
         cat.placeholder = feature.value;
       }
+      return cat;
     });
     this.setState(this_nums);
     this.setState(this_cats);
