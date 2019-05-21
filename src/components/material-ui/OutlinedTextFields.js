@@ -34,7 +34,7 @@ function OutlinedTextFields(props) {
       <TextField
         id={title}
         label={title}
-        value={values.title}
+        value={placeholder}
         onChange={handleChange("title")}
         type="string"
         className={classes.textField}
