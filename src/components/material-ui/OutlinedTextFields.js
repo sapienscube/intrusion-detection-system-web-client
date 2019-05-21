@@ -36,7 +36,7 @@ function OutlinedTextFields(props) {
         label={title}
         value={values.title}
         onChange={handleChange("title")}
-        type="number"
+        type="string"
         className={classes.textField}
         InputLabelProps={{
           shrink: true
