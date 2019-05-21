@@ -16,9 +16,7 @@ function getArray(features) {
 
 function Attack(props) {
   const features = getArray(props.features);
-  console.log(features);
   const prediction = predict(features);
-  console.log("prediction: ", prediction);
   return (
     <div>
       <Typography variant="h3">
