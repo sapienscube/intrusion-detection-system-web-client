@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
-import Feature from "./components/Feature";
+import Features from "./components/Features";
 import Attack from "./components/Attack";
 import Packet from "./components/Packet";
 import features from "./data/Features";
@@ -59,7 +59,7 @@ class App extends React.Component {
         <Grid container justify="center" spacing={36}>
           <Packet features={features} onCSVChange={this.handleCSVChange} />
           Or
-          <Feature
+          <Features
             features={features}
             onFeatureChange={this.handleFeatureChange}
           />
