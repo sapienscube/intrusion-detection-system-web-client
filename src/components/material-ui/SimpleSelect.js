@@ -27,28 +27,25 @@ const styles = {
 };
 
 class SimpleSelect extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: props.placeholder,
-      name: "hai",
-      labelWidth: 0,
-      inputLabelRef: null
-    };
-  }
+  state = {
+    title: this.props.placeholder,
+    name: "hai",
+    labelWidth: 0,
+    inputLabelRef: null
+  };
 
   handleChange = event => {
     this.setState({
-      ...this.state,
-      [event.target.name]: event.target.value
+      title: event.target.value
     });
+
     this.props.onCatChange({
-      name: this.state.title,
+      name: this.props.title,
       value: event.target.value
     });
   };
   render() {
-    const { classes, title, values } = this.props;
+    const { classes } = this.props;
 
     return (
       <MuiThemeProvider theme={theme}>
@@ -58,7 +55,7 @@ class SimpleSelect extends React.Component {
               ref={this.state.inputLabelRef}
               htmlFor="outlined-age-simple"
             >
-              {title}
+              {this.props.title}
             </InputLabel>
             <Select
               value={this.props.placeholder}
@@ -74,7 +71,7 @@ class SimpleSelect extends React.Component {
               <MenuItem value="">
                 <em>None</em>
               </MenuItem>
-              {values.map((val, ind) => (
+              {this.props.values.map((val, ind) => (
                 <MenuItem value={val}>{val}</MenuItem>
               ))}
             </Select>
