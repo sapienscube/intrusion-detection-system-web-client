@@ -61,7 +61,7 @@ class SimpleSelect extends React.Component {
               {title}
             </InputLabel>
             <Select
-              value={this.state.title}
+              value={this.props.placeholder}
               onChange={this.handleChange}
               input={
                 <OutlinedInput
