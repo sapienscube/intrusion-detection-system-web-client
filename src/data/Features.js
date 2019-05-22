@@ -194,15 +194,15 @@ const features = {
       },
       {
         string: "srv_serror_rate",
-        placeholder: "0.00.1"
+        placeholder: "0.001"
       },
       {
         string: "rerror_rate",
-        placeholder: "0.00.2"
+        placeholder: "0.002"
       },
       {
         string: "srv_rerror_rate",
-        placeholder: "0.00.3"
+        placeholder: "0.003"
       },
       {
         string: "same_srv_rate",
@@ -210,11 +210,11 @@ const features = {
       },
       {
         string: "diff_srv_rate",
-        placeholder: "0.00.4"
+        placeholder: "0.004"
       },
       {
         string: "srv_diff_host_rate",
-        placeholder: "0.00.5"
+        placeholder: "0.005"
       },
       {
         string: "dst_host_count",
@@ -226,35 +226,35 @@ const features = {
       },
       {
         string: "dst_host_same_srv_rate",
-        placeholder: "0.00.6"
+        placeholder: "0.006"
       },
       {
         string: "dst_host_diff_srv_rate",
-        placeholder: "0.00.7"
+        placeholder: "0.007"
       },
       {
         string: "dst_host_same_src_port_rate",
-        placeholder: "0.00.8"
+        placeholder: "0.008"
       },
       {
         string: "dst_host_srv_diff_host_rate",
-        placeholder: "0.00.9"
+        placeholder: "0.009"
       },
       {
         string: "dst_host_serror_rate",
-        placeholder: "0.00.10"
+        placeholder: "0.0010"
       },
       {
         string: "dst_host_srv_serror_rate",
-        placeholder: "0.00.11"
+        placeholder: "0.0011"
       },
       {
         string: "dst_host_rerror_rate",
-        placeholder: "0.00.12"
+        placeholder: "0.0012"
       },
       {
         string: "dst_host_srv_rerror_rate",
-        placeholder: "0.00.13"
+        placeholder: "0.0013"
       }
     ],
     values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "..."]

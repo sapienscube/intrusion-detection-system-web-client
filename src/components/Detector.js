@@ -6,7 +6,7 @@ import { Query } from "react-apollo";
 import { getFeaturesArray } from "./Utils";
 
 const PREDICT_ATTACK_TYPE = gql`
-  query Query($packets: List[List[String]]) {
+  query PREDICT($packets: [[String]]) {
     predict(packets: $packets)
   }
 `;
@@ -15,7 +15,7 @@ function Detector(props) {
   const features = [getFeaturesArray(props.features)];
   return (
     <div>
-      <Query query={PREDICT_ATTACK_TYPE} variables={{ features }}>
+      <Query query={PREDICT_ATTACK_TYPE} variables={{ packets: features }}>
         {({ loading, error, data }) => {
           if (loading) return <div>loading..</div>;
           if (error) return <div>Error:</div>;
