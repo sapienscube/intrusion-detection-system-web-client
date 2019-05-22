@@ -16,36 +16,33 @@ const styles = {
   }
 };
 
-function OutlinedTextFields(props) {
-  const { classes, title, placeholder } = props;
-  const [values, setValues] = React.useState({
-    name: "nums",
-    title: placeholder,
-    multiline: "Controlled",
-    currency: "EUR"
-  });
-  const handleChange = name => event => {
-    setValues({ ...values, [name]: event.target.value });
-    props.onNumChange({ name: title, value: event.target.value });
+class OutlinedTextFields extends React.Component {
+  handleChange = event => {
+    this.props.onNumChange({
+      name: this.props.title,
+      value: event.target.value
+    });
   };
 
-  return (
-    <MuiThemeProvider theme={theme}>
-      <TextField
-        id={title}
-        label={title}
-        value={values.title}
-        onChange={handleChange("title")}
-        type="number"
-        className={classes.textField}
-        InputLabelProps={{
-          shrink: true
-        }}
-        margin="normal"
-        variant="outlined"
-      />
-    </MuiThemeProvider>
-  );
+  render() {
+    return (
+      <MuiThemeProvider theme={theme}>
+        <TextField
+          id={this.props.title}
+          label={this.props.title}
+          value={this.props.placeholder}
+          onChange={this.handleChange}
+          type="number"
+          className={this.props.classes.textField}
+          InputLabelProps={{
+            shrink: true
+          }}
+          margin="normal"
+          variant="outlined"
+        />
+      </MuiThemeProvider>
+    );
+  }
 }
 
 export default withStyles(styles)(OutlinedTextFields);
