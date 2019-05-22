@@ -1,4 +1,6 @@
 import React from "react";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import Typography from "@material-ui/core/Typography";
 
 import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
@@ -17,10 +19,14 @@ function Detector(props) {
     <div>
       <Query query={PREDICT_ATTACK_TYPE} variables={{ packets: features }}>
         {({ loading, error, data }) => {
-          if (loading) return <div>loading..</div>;
-          if (error) return <div>Error:</div>;
-          console.log(data);
-          return <div>{data.predict}</div>;
+          if (loading) return <CircularProgress />;
+          if (error)
+            return (
+              <Typography variant="h3" color="error">
+                Error
+              </Typography>
+            );
+          return <Typography variant="h3">{data.predict}</Typography>;
         }}
       </Query>
     </div>
