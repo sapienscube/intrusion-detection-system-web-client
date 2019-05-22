@@ -42,6 +42,8 @@ class Packet extends React.Component {
             variant="outlined"
             value={featuresArray}
             onChange={this.handleChange}
+            multiline="true"
+            rows={2}
           />
         </Grid>
       </Grid>

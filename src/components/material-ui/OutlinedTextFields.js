@@ -32,7 +32,7 @@ class OutlinedTextFields extends React.Component {
           label={this.props.title}
           value={this.props.placeholder}
           onChange={this.handleChange}
-          type="string"
+          type="number"
           className={this.props.classes.textField}
           InputLabelProps={{
             shrink: true
