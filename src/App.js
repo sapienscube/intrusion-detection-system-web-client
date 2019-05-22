@@ -10,7 +10,7 @@ import { ApolloProvider } from "react-apollo";
 
 const client = new ApolloClient({
   // uri: "http://localhost:5000/intrusion-detection-system"
-  uri: "http://sapienscube.pythonanywhere.com/intrusion-detection-system"
+  uri: "https://sapienscube.pythonanywhere.com/intrusion-detection-system"
 });
 
 // 'attack_type'
