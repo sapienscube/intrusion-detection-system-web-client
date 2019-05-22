@@ -11,7 +11,7 @@
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
   },
-  "homepage": "https://sapienscube.github.io/kddcup-intrusion-detection-system",
+  "homepage": "https://sapienscube.github.io/intrusion-detection-system-web-client",
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "yarn run build",
