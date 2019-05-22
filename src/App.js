@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core";
 import Features from "./components/Features";
-import Attack from "./components/Attack";
+import Detector from "./components/Detector";
 import Packet from "./components/Packet";
 import features from "./data/Features";
 
@@ -73,7 +73,7 @@ class App extends React.Component {
               onFeatureChange={this.handleFeatureChange}
             />
             <div style={{ padding: "30px" }}>
-              <Attack features={features} />
+              <Detector features={features} />
             </div>
           </Grid>
         </div>
