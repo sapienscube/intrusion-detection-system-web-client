@@ -5,6 +5,14 @@ import Attack from "./components/Attack";
 import Packet from "./components/Packet";
 import features from "./data/Features";
 
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+
+const client = new ApolloClient({
+  // uri: "http://sapienscube.pythonanywhere.com/intrusion-detection-system"
+  uri: "http://localhost:5000/intrusion-detection-system"
+});
+
 // 'attack_type'
 
 class App extends React.Component {
@@ -55,19 +63,21 @@ class App extends React.Component {
   render() {
     const { features } = this.state;
     return (
-      <div className="App">
-        <Grid container justify="center" spacing={36}>
-          <Packet features={features} onCSVChange={this.handleCSVChange} />
-          Or
-          <Features
-            features={features}
-            onFeatureChange={this.handleFeatureChange}
-          />
-          <div style={{ padding: "30px" }}>
-            <Attack features={features} />
-          </div>
-        </Grid>
-      </div>
+      <ApolloProvider client={client}>
+        <div className="App">
+          <Grid container justify="center" spacing={36}>
+            <Packet features={features} onCSVChange={this.handleCSVChange} />
+            Or
+            <Features
+              features={features}
+              onFeatureChange={this.handleFeatureChange}
+            />
+            <div style={{ padding: "30px" }}>
+              <Attack features={features} />
+            </div>
+          </Grid>
+        </div>
+      </ApolloProvider>
     );
   }
 }

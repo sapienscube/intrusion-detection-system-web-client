@@ -1,11 +1,8 @@
-import React from 'react'
+import React from "react";
 
 function Detector() {
-  return (
-    <div>
-      Detector
-    </div>
-  )
+  return;
+  <div>Detector</div>;
 }
 
-export default Detector
+export default Detector;
