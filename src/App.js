@@ -72,8 +72,11 @@ class App extends React.Component {
               features={features}
               onFeatureChange={this.handleFeatureChange}
             />
-            <div style={{ padding: "30px" }}>
+            <div style={{ padding: "10px" }}>
               <Detector features={features} />
+              <div style={{ paddingTop: "20px" }}>
+                &copy; Sapienscube&trade; 2019
+              </div>
             </div>
           </Grid>
         </div>
