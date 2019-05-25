@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/intrusion-detection-system-web-client/static/css/main.34de6062.chunk.css",
-    "main.js": "/intrusion-detection-system-web-client/static/js/main.251dce60.chunk.js",
-    "main.js.map": "/intrusion-detection-system-web-client/static/js/main.251dce60.chunk.js.map",
+    "main.js": "/intrusion-detection-system-web-client/static/js/main.1d537cd8.chunk.js",
+    "main.js.map": "/intrusion-detection-system-web-client/static/js/main.1d537cd8.chunk.js.map",
     "runtime~main.js": "/intrusion-detection-system-web-client/static/js/runtime~main.cef97c1a.js",
     "runtime~main.js.map": "/intrusion-detection-system-web-client/static/js/runtime~main.cef97c1a.js.map",
     "static/js/2.e617bf2d.chunk.js": "/intrusion-detection-system-web-client/static/js/2.e617bf2d.chunk.js",
     "static/js/2.e617bf2d.chunk.js.map": "/intrusion-detection-system-web-client/static/js/2.e617bf2d.chunk.js.map",
     "index.html": "/intrusion-detection-system-web-client/index.html",
-    "precache-manifest.11597a3480aaf6af9496120a9aaceb3f.js": "/intrusion-detection-system-web-client/precache-manifest.11597a3480aaf6af9496120a9aaceb3f.js",
+    "precache-manifest.2d81a21fc7ca9ca3d77d9a031596fa89.js": "/intrusion-detection-system-web-client/precache-manifest.2d81a21fc7ca9ca3d77d9a031596fa89.js",
     "service-worker.js": "/intrusion-detection-system-web-client/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/intrusion-detection-system-web-client/static/css/main.34de6062.chunk.css.map"
   }
