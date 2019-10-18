@@ -3,6 +3,7 @@ import { Grid, Button } from "@material-ui/core";
 import Feature from "./components/Feature";
 import Attack from "./components/Attack";
 import CSVRecord from "./components/CSVRecord";
+import Detector from "./components/Detector";
 
 class App extends React.Component {
   state = {
@@ -317,6 +318,7 @@ class App extends React.Component {
           />
           <div style={{ padding: "70px" }}>
             <Attack features={features} />
+            <Detector />
           </div>
         </Grid>
       </div>
