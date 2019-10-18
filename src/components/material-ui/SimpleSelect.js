@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import {
   createMuiTheme,
   MuiThemeProvider,
@@ -27,59 +26,60 @@ const styles = {
   }
 };
 
-function SimpleSelect(props) {
-  const { classes, title, values, placeholder, onCatChange } = props;
-  const [state, setState] = React.useState({
-    title: title,
+class SimpleSelect extends React.Component {
+  state = {
+    title: this.props.placeholder,
     name: "hai",
-    labelWidth: 0
-  });
-  const inputLabelRef = React.useRef(null);
+    labelWidth: 0,
+    inputLabelRef: null
+  };
 
-  React.useEffect(() => {
-    setState({
-      ...state,
-      labelWidth: ReactDOM.findDOMNode(inputLabelRef.current).offsetWidth
+  handleChange = event => {
+    this.setState({
+      title: event.target.value
     });
-  }, []);
 
-  function handleChange(event) {
-    setState({
-      ...state,
-      [event.target.name]: event.target.value
+    this.props.onCatChange({
+      name: this.props.title,
+      value: event.target.value
     });
-    onCatChange({ name: title, value: event.target.value });
+  };
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <MuiThemeProvider theme={theme}>
+        <form className={classes.root} autoComplete="off">
+          <FormControl variant="outlined" className={classes.formControl}>
+            <InputLabel
+              ref={this.state.inputLabelRef}
+              htmlFor="outlined-age-simple"
+            >
+              {this.props.title}
+            </InputLabel>
+            <Select
+              value={this.props.placeholder}
+              onChange={this.handleChange}
+              input={
+                <OutlinedInput
+                  labelWidth={this.state.labelWidth}
+                  name="title"
+                  id="outlined-age-simple"
+                />
+              }
+            >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              {this.props.values.map((val, ind) => (
+                <MenuItem value={val}>{val}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </form>
+      </MuiThemeProvider>
+    );
   }
-
-  return (
-    <MuiThemeProvider theme={theme}>
-      <form className={classes.root} autoComplete="off">
-        <FormControl variant="outlined" className={classes.formControl}>
-          <InputLabel ref={inputLabelRef} htmlFor="outlined-age-simple">
-            {title}
-          </InputLabel>
-          <Select
-            value={state.title}
-            onChange={handleChange}
-            input={
-              <OutlinedInput
-                labelWidth={state.labelWidth}
-                name="title"
-                id="outlined-age-simple"
-              />
-            }
-          >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            {values.map((val, ind) => (
-              <MenuItem value={val}>{val}</MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </form>
-    </MuiThemeProvider>
-  );
 }
 
 export default withStyles(styles)(SimpleSelect);

@@ -3,7 +3,7 @@ import { Grid } from "@material-ui/core";
 import SimpleSelect from "./material-ui/SimpleSelect";
 import OutlinedTextFields from "./material-ui/OutlinedTextFields";
 
-function Feature(props) {
+function Features(props) {
   const { features } = props;
   function handleCatChange(cat) {
     props.onFeatureChange(cat);
@@ -39,4 +39,4 @@ function Feature(props) {
 
 // title={title} values={features.numerical.values}
 
-export default Feature;
+export default Features;
